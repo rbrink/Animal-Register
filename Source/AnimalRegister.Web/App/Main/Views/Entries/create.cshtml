@@ -1,0 +1,92 @@
+﻿<div ng-controller="app.views.entries.create as create">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group pull-right m-t-15">
+                <button type="button" ng-disabled="create.pageform.$invalid" ng-click="create.save()" class="btn btn-default waves-effect waves-light">
+                    Opslaan
+                    <span class="m-l-5">
+                        <i class="fa fa-save"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="btn-group pull-right m-t-15 m-r-15">
+                <a href="/#/entries" class="btn btn-default waves-effect waves-light">
+                    Terug
+                    <span class="m-l-5">
+                        <i class="fa fa-backward"></i>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div>
+                <div class="card-box">
+                    <form class="form-horizontal" role="form" name="create.pageform">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Datum in</label>
+                            <div class="col-md-10">
+                                <input class="form-control"
+                                       ng-model="create.entry.dateIn"
+                                       ng-model-options="{ updateOn: 'blur' }"
+                                       locale="nl"
+                                       placeholder="Selecteer een datum..."
+                                       moment-picker="create.entry.dateIn"
+                                       format="DD/MM/YYYY"
+                                       max-view="day"
+                                       autoclose="true"
+                                       keyboard="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label" for="example-email">Diersoort</label>
+                            <div class="col-md-10">
+                                <input required="required" type="text" class="form-control" ng-model="create.entry.specy">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Vindplaats</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="create.entry.location">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Via</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="create.entry.via">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Diagnose</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="create.entry.diagnose">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Datum uit</label>
+                            <div class="col-md-10">
+                                <input class="form-control"
+                                       ng-model="create.entry.dateOut"
+                                       ng-model-options="{ updateOn: 'blur' }"
+                                       locale="nl"
+                                       placeholder="Selecteer een datum..."
+                                       moment-picker="create.entry.dateOut"
+                                       format="DD/MM/YYYY"
+                                       max-view="day"
+                                       autoclose="true"
+                                       keyboard="true">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Resultaat</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" ng-model="create.entry.result">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

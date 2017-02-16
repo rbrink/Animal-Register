@@ -1,0 +1,9 @@
+﻿.ng-invalid, ng-invalid-required {
+  border: 1px solid #ef4836 !important;
+  background: #F3E0DE !important;
+}
+
+form.ng-invalid, form.ng-invalid-required {
+  border: none !important;
+  background: #FFF !important;
+}

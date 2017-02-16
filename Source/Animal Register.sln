@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalRegister.Core", "AnimalRegister.Core\AnimalRegister.Core.csproj", "{55F648C1-5E11-4E87-A309-0C66DD0E4212}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalRegister.Application", "AnimalRegister.Application\AnimalRegister.Application.csproj", "{5FB9B02E-7BFF-418E-8C5F-792FF0E71B48}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{4851D770-197B-4B00-8BD3-19739DA2D18E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{A02F00EC-B429-40A2-AF83-21DD778F107E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{6FE831A0-0343-43C1-9487-B0917AB1BCE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalRegister.WebApi", "AnimalRegister.WebApi\AnimalRegister.WebApi.csproj", "{3A0BA1BE-E5CA-45D0-900A-070AD3740E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalRegister.EntityFramework", "AnimalRegister.EntityFramework\AnimalRegister.EntityFramework.csproj", "{4E302FA5-F832-4921-8D27-6E9542FE92B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalRegister.Web", "AnimalRegister.Web\AnimalRegister.Web.csproj", "{5CA6118A-CCD3-4C72-AB97-B1FDFB55AED9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55F648C1-5E11-4E87-A309-0C66DD0E4212}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F648C1-5E11-4E87-A309-0C66DD0E4212}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F648C1-5E11-4E87-A309-0C66DD0E4212}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F648C1-5E11-4E87-A309-0C66DD0E4212}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FB9B02E-7BFF-418E-8C5F-792FF0E71B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB9B02E-7BFF-418E-8C5F-792FF0E71B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB9B02E-7BFF-418E-8C5F-792FF0E71B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB9B02E-7BFF-418E-8C5F-792FF0E71B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0BA1BE-E5CA-45D0-900A-070AD3740E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0BA1BE-E5CA-45D0-900A-070AD3740E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0BA1BE-E5CA-45D0-900A-070AD3740E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0BA1BE-E5CA-45D0-900A-070AD3740E7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E302FA5-F832-4921-8D27-6E9542FE92B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E302FA5-F832-4921-8D27-6E9542FE92B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E302FA5-F832-4921-8D27-6E9542FE92B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E302FA5-F832-4921-8D27-6E9542FE92B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA6118A-CCD3-4C72-AB97-B1FDFB55AED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA6118A-CCD3-4C72-AB97-B1FDFB55AED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA6118A-CCD3-4C72-AB97-B1FDFB55AED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA6118A-CCD3-4C72-AB97-B1FDFB55AED9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55F648C1-5E11-4E87-A309-0C66DD0E4212} = {4851D770-197B-4B00-8BD3-19739DA2D18E}
+		{5FB9B02E-7BFF-418E-8C5F-792FF0E71B48} = {4851D770-197B-4B00-8BD3-19739DA2D18E}
+		{3A0BA1BE-E5CA-45D0-900A-070AD3740E7B} = {A02F00EC-B429-40A2-AF83-21DD778F107E}
+		{4E302FA5-F832-4921-8D27-6E9542FE92B6} = {4851D770-197B-4B00-8BD3-19739DA2D18E}
+		{5CA6118A-CCD3-4C72-AB97-B1FDFB55AED9} = {6FE831A0-0343-43C1-9487-B0917AB1BCE9}
+	EndGlobalSection
+EndGlobal
