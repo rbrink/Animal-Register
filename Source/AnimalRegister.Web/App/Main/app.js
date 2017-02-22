@@ -22,10 +22,8 @@
        }
     ]);
 
-    // Overriding abp.message.error
-    abp.message.error = function (message, title) {
-        // Showing nothing
-    };
+    abp.log.log = {};
+    abp.message.error = {};
 
     function setNavigation($stateProvider, menu) {
         if (menu.items.length) {
