@@ -10,6 +10,16 @@
             var vm = this;
             vm.entries = [];
             vm.drawed = false;
+            vm.filterables = [
+                '#',
+                'Datum in',
+                'Diersoort',
+                'Vindplaats',
+                'Via',
+                'Diagnose',
+                'Datum uit',
+                'Resultaat'
+            ];
 
             function getEntries() {
                 abp.ui.block('.panel');
@@ -27,6 +37,10 @@
                         language: {
                             url: "//cdn.datatables.net/plug-ins/1.10.13/i18n/Dutch.json"
                         },
+                        "lengthMenu": [
+                            [10, 25, 50, 100, -1],
+                            [10, 25, 50, 100, "Alles"]
+                        ],
                         dom: 'Bpltip',
                         buttons: [
                             { extend: "copy", className: 'btn btn-default btn-sm margin-r-5 margin-b-5' },
@@ -37,44 +51,35 @@
                         ],
                         columns: [
                             {
-                                'data': 'id',
-                                'title': '#&nbsp;&nbsp;',
+                                'data': 'id'
                             },
                             {
                                 'data': 'dateIn',
-                                'title': 'Datum in',
                                 render: function (data, type, full, meta) {
                                     var date = moment(data);
                                     return (date.isValid() ? date.format("DD/MM/YYYY") : "");
                                 }
                             },
                             {
-                                'data': 'specy',
-                                'title': 'Diersoort',
+                                'data': 'specy'
                             }, {
-                                'data': 'location',
-                                'title': 'Vindplaats',
+                                'data': 'location'
                             }, {
-                                'data': 'via',
-                                'title': 'Via',
+                                'data': 'via'
                             }, {
-                                'data': 'diagnose',
-                                'title': 'Diagnose',
+                                'data': 'diagnose'
                             }, {
                                 'data': 'dateOut',
-                                'title': 'Datum uit',
                                 render: function (data, type, full, meta) {
                                     var date = moment(data);
                                     return (date.isValid() ? date.format("DD/MM/YYYY") : "");
                                 }
                             },
                             {
-                                'data': 'result',
-                                'title': 'Resultaat',
+                                'data': 'result'
                             },
                             {
                                 'data': null,
-                                'title': 'Acties',
                                 render: function (data, type, full, meta) {
                                     return "<a href='/#/entries/" + full.id + "/edit'>Bewerken</a>" +
                                         " | <a ng-click='index.delete(\"" + full.id + "\")'>Verwijderen</a>";
@@ -85,39 +90,15 @@
                             var childScope = $scope.$new(true);
                             childScope.index = vm;
                             $compile(row)(childScope);
-                        } //,
-                        //drawCallback: function (settings) {
-                        //    if (!vm.drawed) {
-                        //        var api = this.api();
-                        //        $("#dataTable").append(
-                        //            $('<tfoot/>').append($("#dataTable thead tr").clone())
-                        //        );
+                        }
+                    });
 
-                        //        $('#dataTable tfoot th').each(function () {
-                        //            var title = $(this).text().trim();
-                        //            if (title === "#") {
-                        //                $(this).html('<input type="text" size="4" placeholder="' + title + '" />');
-                        //            } else if (title === "Acties") {
-                        //                $(this).html('&nbsp;');
-                        //            } else {
-                        //                $(this).html('<input type="text" size="10" placeholder="' + title + '" />');
-                        //            }
-                        //        });
-
-                        //        api.columns().every(function (index) {
-                        //            var that = api.column(index);
-                        //            $('input', that.footer()).on('keyup change', function () {
-                        //                if (that.search() !== this.value) {
-                        //                    that
-                        //                        .search(this.value)
-                        //                        .draw();
-                        //                }
-                        //            });
-                        //        });
-
-                        //        vm.drawed = true;
-                        //    }
-                        //}
+                    angular.forEach(vm.filterables, function (v, k) {
+                        $("#filterable_" + k).on('keyup paste', function () {
+                            table.column(k)
+                                .search($(this).val().replace(/;/g, '&quot;|&quot;'), true, false)
+                                .draw();
+                        });
                     });
 
                     abp.ui.unblock('.panel');
