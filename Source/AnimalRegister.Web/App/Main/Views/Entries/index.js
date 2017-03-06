@@ -43,11 +43,46 @@
                         ],
                         dom: 'Bpltip',
                         buttons: [
-                            { extend: "copy", className: 'btn btn-default btn-sm margin-r-5 margin-b-5' },
-                            { extend: "csv", className: 'btn btn-default btn-sm margin-r-5 margin-b-5' },
-                            { extend: "excel", className: 'btn btn-default btn-sm margin-r-5 margin-b-5' },
-                            { extend: "pdf", orientation: 'landscape', className: 'btn btn-default btn-sm margin-r-5 margin-b-5' },
-                            { extend: "print", orientation: 'landscape', className: 'btn btn-default btn-sm margin-r-5 margin-b-5' }
+                            {
+                                extend: "copy",
+                                className: 'btn btn-default btn-sm margin-r-5 margin-b-5',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                                }
+                            },
+                            {
+                                extend: "csv",
+                                className: 'btn btn-default btn-sm margin-r-5 margin-b-5',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                                }
+                            },
+                            {
+                                extend: "excel",
+                                className: 'btn btn-default btn-sm margin-r-5 margin-b-5',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                                }
+                            },
+                            {
+                                extend: "pdfHtml5",
+                                orientation: 'landscape',
+                                className: 'btn btn-default btn-sm margin-r-5 margin-b-5',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                                },
+                                customize: function (doc) {
+                                    doc.content[1].table.widths = Array(doc.content[1].table.body[0].length + 1).join('*').split('');
+                                }
+                            },
+                            {
+                                extend: "print",
+                                orientation: 'landscape',
+                                className: 'btn btn-default btn-sm margin-r-5 margin-b-5',
+                                exportOptions: {
+                                    columns: [0, 1, 2, 3, 4, 5, 6, 7]
+                                }
+                            }
                         ],
                         columns: [
                             {
@@ -92,6 +127,8 @@
                             $compile(row)(childScope);
                         }
                     });
+
+                    console.log("????");
 
                     angular.forEach(vm.filterables, function (v, k) {
                         $("#filterable_" + k).on('keyup paste', function () {
